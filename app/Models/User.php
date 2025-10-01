@@ -45,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //Relaciones uno a muchos con el modelo Movimiento
+    public function movimientos()
+    {
+        return $this->hasMany(Movimiento::class);
+    }
+
+    //Relaciones uno a muchos con el modelo presupuesto
+    public function presupuestos()
+    {
+        return $this->hasMany(Presupuesto::class);
+    }
 }
