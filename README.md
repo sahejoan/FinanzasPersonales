@@ -7,55 +7,80 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# FinanzasPersonales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descripción del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**FinanzasPersonales** es un sistema de gestión de finanzas personales construido con el framework **Laravel 12**. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+El objetivo principal de esta aplicación es:
+* Registrar y categorizar ingresos y egresos.
+* Visualizar el estado financiero a través de reportes y gráficos.
+* Gestionar presupuestos y metas de ahorro.
 
-## Learning Laravel
+## Tecnologías
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Este proyecto está construido sobre el framework Laravel, utilizando las siguientes tecnologías clave:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* **Framework:** Laravel (v12)
+* **Lenguaje:** PHP
+* **Base de Datos:** MySQL
+* **Frontend:** Blade, [Especificar Framework CSS/JS, ej: Tailwind CSS, Livewire, Alpine.js]
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalación y Configuración
 
-## Laravel Sponsors
+Sigue estos pasos para poner el proyecto en funcionamiento localmente:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/sahejoan/FinanzasPersonales.git](https://github.com/sahejoan/FinanzasPersonales.git)
+    cd FinanzasPersonales
+    ```
 
-### Premium Partners
+2.  **Instalar dependencias de PHP:**
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3.  **Configurar el archivo .env:**
+    Copia el archivo de ejemplo y genera la clave de la aplicación:
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+    *Asegúrate de configurar los datos de tu base de datos en el archivo **`.env`**.*
 
-## Contributing
+4.  **Ejecutar migraciones y seeds (opcional):**
+    ```bash
+    php artisan migrate
+    # Si tienes seeds:
+    # php artisan db:seed
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5.  **Instalar dependencias de Node (para frontend):**
+    ```bash
+    npm install
+    npm run dev  # O npm run build
+    ```
 
-## Code of Conduct
+6.  **Iniciar el servidor local de Laravel:**
+    ```bash
+    php artisan serve
+    ```
+    La aplicación estará accesible en `http://127.0.0.1:8000`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Acerca de Laravel
 
-## Security Vulnerabilities
+Laravel es un framework de aplicación web con sintaxis expresiva y elegante.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Las características principales que facilitan el desarrollo son:
+* [Enrutamiento (Routing)](https://laravel.com/docs/routing).
+* [Eloquent ORM (Base de datos)](https://laravel.com/docs/eloquent).
+* [Migraciones de base de datos](https://laravel.com/docs/migrations).
+* [Procesamiento de colas (Queues)](https://laravel.com/docs/queues).
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Licencia
+
+El framework Laravel es software de código abierto licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
