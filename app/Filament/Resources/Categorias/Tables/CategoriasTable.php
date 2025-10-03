@@ -22,12 +22,12 @@ class CategoriasTable
                     ->badge(),
                 TextColumn::make('created_at')
                     ->dateTime()
-                    ->sortable(),
-                    // ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    // ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
