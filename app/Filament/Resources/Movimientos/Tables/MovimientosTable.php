@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Categorias\Tables;
+namespace App\Filament\Resources\Movimientos\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,27 +8,29 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Tables\Filters\SelectFilter;
 
-use function Laravel\Prompts\select;
-
-class CategoriasTable
+class MovimientosTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('id')
-                    ->label('Nro')
-                    ->rowIndex('')
+                TextColumn::make('user_id')
+                    ->numeric()
                     ->sortable(),
-                TextColumn::make('nombre')
-                    ->sortable()
-                    ->searchable(),
+                TextColumn::make('categoria_id')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('tipo')
-                    ->sortable()
-                    ->searchable()
                     ->badge(),
+                TextColumn::make('monto')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('foto')
+                    ->searchable(),
+                TextColumn::make('fecha')
+                    ->date()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -39,20 +41,12 @@ class CategoriasTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                  SelectFilter::make('tipo')
-                    ->options([
-                        'ingreso' => 'Ingreso',
-                        'gasto' => 'Gasto',
-                    ])
-                    ->placeholder('Filtrar por Tipo')
-                    ->label('Tipo'),
+                //
             ])
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
-
             ])
-
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

@@ -36,6 +36,7 @@ class CategoriaResource extends Resource
 
     public static function table(Table $table): Table
     {
+
         return CategoriasTable::configure($table);
     }
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Filament\Resources\Categorias\Pages;
+namespace App\Filament\Resources\Movimientos\Pages;
 
-use App\Filament\Resources\Categorias\CategoriaResource;
+use App\Filament\Resources\Movimientos\MovimientoResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
-use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
+use Filament\Notifications\Notification;
 
-class EditCategoria extends EditRecord
+class EditMovimiento extends EditRecord
 {
-    protected static string $resource = CategoriaResource::class;
+    protected static string $resource = MovimientoResource::class;
 
     protected function getRedirectUrl(): string
     {
@@ -25,8 +25,8 @@ class EditCategoria extends EditRecord
     protected function afterSave()
     {
         Notification::make()
-            ->title('Categoria actualizada')
-            ->body('La categoria ha sido actualizada exitosamente.')
+            ->title('Movimiento actualizado')
+            ->body('La Movimiento ha sido actualizada exitosamente.')
             ->success()
             ->send();
     }
@@ -37,12 +37,10 @@ class EditCategoria extends EditRecord
              DeleteAction::make()
                ->successNotification(
                      Notification::make()
-                    ->title('Categoria Eliminada')
-                    ->body('La categoria ha sido eliminada exitosamente.')
+                    ->title('Movimiento Eliminado')
+                    ->body('El Movimiento ha sido eliminado exitosamente.')
                     ->success()
                 ),
         ];
     }
-
-
 }

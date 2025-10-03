@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Categorias\Pages;
+namespace App\Filament\Resources\Movimientos\Pages;
 
-use App\Filament\Resources\Categorias\CategoriaResource;
-use Filament\Notifications\Notification;
+use App\Filament\Resources\Movimientos\MovimientoResource;
 use Filament\Resources\Pages\CreateRecord;
+use Filament\Notifications\Notification;
 
-class CreateCategoria extends CreateRecord
+class CreateMovimiento extends CreateRecord
 {
-    protected static string $resource = CategoriaResource::class;
+    protected static string $resource = MovimientoResource::class;
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
@@ -22,8 +23,8 @@ class CreateCategoria extends CreateRecord
     protected function afterCreate()
     {
         Notification::make()
-            ->title('Categoria creada')
-            ->body('La categoria ha sido creada exitosamente.')
+            ->title('Movimiento creado')
+            ->body('El Movimiento ha sido creada exitosamente.')
             ->success()
             ->send();
     }
@@ -41,6 +42,5 @@ class CreateCategoria extends CreateRecord
                 ->label('Cancelar'),
         ];
     }
-
 
 }
